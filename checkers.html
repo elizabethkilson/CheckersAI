@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      #myCanvas {
+        border: 1px solid #9C9898;
+      }
+    </style>
+  </head>
+  <body>
+  	<p id = "p0" hidden>Player 1: <select id = 'pl1'>
+		<option value='h'>Human</option>
+		<option value='ce'>Computer</option></select><br>
+		Player 2: <select id = 'pl2'><option value='h'>Human</option>
+		<option value='ce'>Computer</option></select><br>
+		<button id='next'>Next</button><br></p>
+	<p id = "p1" hidden><button id='play'>Play from beginning</button><br>
+		<button id='set'>Set starting position</button></p>
+	<p id = "p2" hidden><canvas id="set_board" width="500" height="500">
+		</canvas><br>
+		Turn: <select id = "set_turn"><option value = 0>Player 1</option>
+		<option value = 1>Player 2</option></select>
+		<button id = "finish_set">Play</button><br><br>
+		Left click to place Player 1's pieces, and right click to place Player 
+		2's pieces. Click a piece a second time to king it. To remove a piece,
+		click a third time.</p>
+	<div id = "p3" hidden><canvas id="board" width="500" height="500">
+		</canvas><br>
+		<button id = "show">Show legal moves</button>
+		<p id = "label"></p>
+		<button id = "prev_move" hidden>&lt;-</button>
+		<button id = "next_move" hidden>-&gt;</button><br><br>
+		To do double jumps, left click on the piece, then right click on every 
+		square along the path (not including the pieces jumped, first or last 
+		squares), then left click on the last square.
+		</div>
+	
+	<script src="jquery-1.10.2.min.js">
+		</script>
+	<SCRIPT LANGUAGE="JavaScript" SRC="checkers_graphics.js">
+	</SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" SRC="initialize.js">
+	</SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" SRC="human_player.js">
+	</SCRIPT>
+	<SCRIPT LANGUAGE="JavaScript" SRC="computer_player.js">
+	</SCRIPT>
+    <script>
+    var g_occupied,
+    	g_player,
+    	g_king;
+    var player0,
+    	player1;
+    var canvas,
+    	ctx;
+    	
+    initialize();
+    
+    </script>
+  </body>
+</html>
